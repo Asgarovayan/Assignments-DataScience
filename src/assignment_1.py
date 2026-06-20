@@ -7,7 +7,8 @@ def load_data(file_path: str) -> pd.DataFrame:
     Return the loaded DataFrame.
     """
     # TODO: Implement this function
-    pass
+    df = pd.read_csv(file_path)
+    return df
 
 def clean_age(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -15,7 +16,9 @@ def clean_age(df: pd.DataFrame) -> pd.DataFrame:
     Should return the modified DataFrame.
     """
     # TODO: Implement this function
-    pass
+    median_age = df['Age'].median()
+    df['Age'] = df['Age'].fillna(median_age)
+    return df
 
 def convert_types(df:pd.DataFrame) -> pd.DataFrame:
     """
@@ -24,7 +27,9 @@ def convert_types(df:pd.DataFrame) -> pd.DataFrame:
     Should return the modified DataFrame.
     """
     # TODO: Implement this function
-    pass
+    df['CryoSleep'] = df['CryoSleep'].fillna(False).astype(bool)
+    df['VIP'] = df['VIP'].fillna(False).astype(bool)
+    return df
 
 if __name__ == "__main__":
     # This block allows students to test their code locally
