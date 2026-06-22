@@ -31,7 +31,7 @@ The year is 2912. The spaceship *Titanic* was an interstellar passenger liner. W
 
 2. **Clone your fork:**
    ```bash
-   git clone https://github.com/TechLabs-Dusseldorf/Assignments-DataScience.git
+   git clone https://github.com/[your GitHub]/Assignments-DataScience.git
    cd Assignments-DataScience
    ```
 
@@ -49,10 +49,11 @@ The year is 2912. The spaceship *Titanic* was an interstellar passenger liner. W
 5. **The Data:**
    The `train.csv` file is already provided in the `data/` folder. You can use this for all your analysis and modeling.
    Please do not delete the file, as you will need it throughout the assignments.
+   Also make sure, that you do not override this file and keep it in this version.
 
-6. **Testing:**
+7. **Testing:**
    You can test your own code by running the corresponding terminal command as it is written for each assignment.
-   Please do not delete or change the code inside the tests/ folder
+   Please do not delete or change the code inside the `tests/` folder
 
 ---
 
