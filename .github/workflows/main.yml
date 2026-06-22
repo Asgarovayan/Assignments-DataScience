@@ -1,5 +1,4 @@
 name: ML Assignment Grader
-
 on:
   push:
     branches: [ main ]
@@ -8,8 +7,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  test:
+    name: Test (${{ matrix.test-file }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        test-file:
+          - tests/test_assignment_1.py
+          - tests/test_assignment_2.py
+          - tests/test_assignment_3.py
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.9
@@ -22,4 +29,4 @@ jobs:
         pip install -r requirements.txt
     - name: Test with pytest
       run: |
-        pytest tests/
+        pytest ${{ matrix.test-file }}

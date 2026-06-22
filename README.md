@@ -37,8 +37,8 @@ The year is 2912. The spaceship *Titanic* was an interstellar passenger liner. W
 
 3. **Set up a Virtual Environment (Recommended):**
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
    ```
 
 4. **Install Dependencies:**
