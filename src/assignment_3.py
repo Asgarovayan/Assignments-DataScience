@@ -8,13 +8,11 @@ from sklearn.metrics import accuracy_score, f1_score
 
 def prepare_target(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Convert the 'Transported' column from Boolean
-    (True/False) to Integer (1/0).
+    Convert the 'Transported' column from Boolean (True/False) to Integer (1/0).
 
     Should return the modified DataFrame.
     """
     df["Transported"] = df["Transported"].astype(int)
-
     return df
 
 
@@ -24,7 +22,7 @@ def split_data(
     target: str,
     test_size=0.2,
     random_state=42
-):
+) -> Tuple[pd.DataFrame, pd.DataFrame, pd.Series, pd.Series]:
     """
     Split the data into training and testing sets.
 
@@ -53,15 +51,12 @@ def train_model(
     y_train: pd.Series
 ) -> DecisionTreeClassifier:
     """
-    Initialize and train a DecisionTreeClassifier
-    on the training data.
+    Initialize and train a DecisionTreeClassifier on the training data.
 
     Return the trained model.
     """
     model = DecisionTreeClassifier(random_state=42)
-
     model.fit(X_train, y_train)
-
     return model
 
 
@@ -69,7 +64,7 @@ def evaluate_model(
     model: DecisionTreeClassifier,
     X_test: pd.DataFrame,
     y_test: pd.Series
-) -> Dict:
+) -> Dict[str, float]:
     """
     Predict the labels for the test set and calculate metrics.
 
